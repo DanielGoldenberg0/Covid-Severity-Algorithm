@@ -5,16 +5,16 @@ PATH = "test.xlsx"
 
 
 def mildSeverity():
-    pass
+    return False
 
 
 def mildWithRiskSeverity():
-    pass
+    return False
 
 
 def moderateSeverity():
-    pass
+    return False
 
 
 def severeSeverity():
-    pass
+    return False
