@@ -37,18 +37,27 @@ def write_result():
 
 
 def mild_severity(patient: Patient) -> bool:
+    if len(patient.symptoms) >= 2:
+        return True
     return False
 
 
 def mild_with_risk_severity(patient: Patient) -> bool:
+    if len(patient.mild_signs) >= 2 or (len(patient.mild_signs) >= 1 and patient.age >= 65):
+        return True
     return False
 
 
 def moderate_severity(patient: Patient) -> bool:
+    if not patient.intubated:
+        if len(patient.moderate_signs) >= 2:
+            return True
     return False
 
 
 def severe_severity(patient: Patient) -> bool:
+    if len(patient.severe_signs) >= 2 or (len(patient.mild_signs) >= 1 and patient.intubated):
+        return True
     return False
 
 
